@@ -1,0 +1,6 @@
+- [ ] Add hamburger menu button to navbar for small screens
+- [ ] Hide nav items on small screens using responsive classes
+- [ ] Create mobile menu overlay that appears when hamburger is clicked
+- [ ] Add close button to mobile menu
+- [ ] Ensure mobile menu closes when a nav item is clicked
+- [ ] Test responsiveness on small screens
