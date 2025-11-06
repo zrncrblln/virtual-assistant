@@ -1,6 +1,7 @@
-# TODO: Update Index.tsx Image Handling
+# Deployment to GitHub Pages TODO
 
-- [ ] Remove 5 image import statements from Index.tsx (heroImage, predictiveAnalytics, automatedWorkflows, realtimeData, nlpChat)
-- [ ] Change hero image src from {heroImage} to "/hero-ai-interface.jpg"
-- [ ] Run the app to verify images load correctly
-- [ ] Remove empty src/assets/ folder if applicable
+- [ ] Modify vite.config.ts to set build.outDir to 'docs'
+- [ ] Update .gitignore to exclude 'docs' instead of 'dist'
+- [ ] Run npm run build to generate the production build in docs/
+- [ ] Commit the changes (including the docs/ folder) and push to the main branch
+- [ ] Ensure GitHub Pages is enabled in repository settings for main branch /docs (manual step on GitHub)
