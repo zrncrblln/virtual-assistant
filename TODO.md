@@ -1,7 +1,7 @@
 # Deployment to GitHub Pages TODO
 
-- [ ] Commit current changes to main branch
-- [ ] Run `npm run build` to build project into docs folder
+- [x] Commit current changes to main branch
+- [x] Run `npm run build` to build project into docs folder
 - [ ] Add docs folder to git
 - [ ] Commit docs folder
 - [ ] Push commits to main branch on GitHub
