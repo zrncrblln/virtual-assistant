@@ -35,6 +35,9 @@ import {
   Moon,
 } from "lucide-react";
 import emailjs from "@emailjs/browser";
+import logo from "@/assets/logo.png";
+import heroImage from "@/assets/hero-ai-interface.jpg";
+import profileImage from "@/assets/profile.png";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -91,7 +94,7 @@ const Index = () => {
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
               <div className="bg-white p-2 rounded">
-                <img src="/logo.png" alt="Logo" className="h-8 w-auto" />
+                <img src={logo} alt="Logo" className="h-8 w-auto" />
               </div>
             </div>
             {/* Desktop Navigation */}

@@ -19,6 +19,6 @@ export default defineConfig(({ mode }) => ({
   },
   base: "/virtual-assistant/",
   build: {
-    outDir: "dist",
+    outDir: "docs",
   },
 }));

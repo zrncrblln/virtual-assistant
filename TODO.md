@@ -1,7 +1,8 @@
 # Deployment to GitHub Pages TODO
 
-- [ ] Modify vite.config.ts to set build.outDir to 'docs'
-- [ ] Update .gitignore to exclude 'docs' instead of 'dist'
-- [ ] Run npm run build to generate the production build in docs/
-- [ ] Commit the changes (including the docs/ folder) and push to the main branch
-- [ ] Ensure GitHub Pages is enabled in repository settings for main branch /docs (manual step on GitHub)
+- [ ] Commit current changes to main branch
+- [ ] Run `npm run build` to build project into docs folder
+- [ ] Add docs folder to git
+- [ ] Commit docs folder
+- [ ] Push commits to main branch on GitHub
+- [ ] Enable GitHub Pages in repository settings (deploy from docs folder on main branch)
