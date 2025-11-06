@@ -37,7 +37,6 @@ import {
 import emailjs from "@emailjs/browser";
 import logo from "@/assets/logo.png";
 import heroImage from "@/assets/hero-ai-interface.jpg";
-import profileImage from "@/assets/profile.png";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -187,7 +186,7 @@ const Index = () => {
         {/* Lively Background */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/hero-ai-interface.jpg"
+            src={heroImage}
             alt="AI-powered virtual assistant interface"
             className="w-full h-full object-cover opacity-20 animate-pulse-slow"
             style={{
@@ -324,7 +323,7 @@ const Index = () => {
             <Card className="glass-card p-8 md:p-12 text-center">
               <div className="mb-8">
                 <img
-                  src="/profile.png"
+                  src="/virtual-assistant/profile.png"
                   alt="Zoren Corbillon"
                   className="w-32 h-32 mx-auto mb-6 rounded-full object-cover"
                 />
