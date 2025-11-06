@@ -1,8 +1,7 @@
-# Deployment to GitHub Pages TODO
+# TODO: Fix GitHub Pages Deployment Issue
 
-- [x] Commit current changes to main branch
-- [x] Run `npm run build` to build project into docs folder
-- [ ] Add docs folder to git
-- [ ] Commit docs folder
-- [ ] Push commits to main branch on GitHub
-- [ ] Enable GitHub Pages in repository settings (deploy from docs folder on main branch)
+- [x] Add "homepage" field to package.json
+- [x] Set basename in BrowserRouter in App.tsx
+- [ ] Run build command to generate docs folder
+- [ ] Commit and push changes to main branch
+- [ ] Verify deployment on GitHub Pages
