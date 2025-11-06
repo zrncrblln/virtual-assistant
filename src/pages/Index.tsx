@@ -31,18 +31,20 @@ import {
   Menu,
   X,
   FolderOpen,
+  Sun,
+  Moon,
 } from "lucide-react";
 import emailjs from "@emailjs/browser";
-import heroImage from "@/assets/hero-ai-interface.jpg";
-import predictiveAnalytics from "@/assets/predictive-analytics.jpg";
-import automatedWorkflows from "@/assets/automated-workflows.jpg";
-import realtimeData from "@/assets/realtime-data.jpg";
-import nlpChat from "@/assets/nlp-chat.jpg";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("home");
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", isDarkMode);
+  }, [isDarkMode]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -86,7 +88,7 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <div
               className="flex-shrink-0 cursor-pointer"
-              onClick={() => scrollToSection("home")}
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
               <div className="bg-white p-2 rounded">
                 <img src="/logo.png" alt="Logo" className="h-8 w-auto" />
@@ -103,13 +105,30 @@ const Index = () => {
                       ? "bg-primary/20 text-primary border border-primary/50 glow-border"
                       : "text-muted-foreground hover:text-foreground hover:bg-primary/10"
                   }`}
-                  onClick={() => scrollToSection(item.id)}
+                  onClick={() =>
+                    item.id === "home"
+                      ? window.scrollTo({ top: 0, behavior: "smooth" })
+                      : scrollToSection(item.id)
+                  }
                 >
                   <item.icon className="w-4 h-4 mr-2" />
                   {item.label}
                 </Button>
               ))}
             </div>
+            {/* Theme Toggle Button */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="mr-2"
+              onClick={() => setIsDarkMode(!isDarkMode)}
+            >
+              {isDarkMode ? (
+                <Sun className="w-6 h-6" />
+              ) : (
+                <Moon className="w-6 h-6" />
+              )}
+            </Button>
             {/* Mobile Menu Button */}
             <Button
               variant="ghost"
@@ -140,7 +159,11 @@ const Index = () => {
                         : "text-muted-foreground hover:text-foreground hover:bg-primary/10"
                     }`}
                     onClick={() => {
-                      scrollToSection(item.id);
+                      if (item.id === "home") {
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      } else {
+                        scrollToSection(item.id);
+                      }
                       setIsMenuOpen(false);
                     }}
                   >
@@ -161,7 +184,7 @@ const Index = () => {
         {/* Lively Background */}
         <div className="absolute inset-0 z-0">
           <img
-            src={heroImage}
+            src="/hero-ai-interface.jpg"
             alt="AI-powered virtual assistant interface"
             className="w-full h-full object-cover opacity-20 animate-pulse-slow"
             style={{
@@ -187,7 +210,7 @@ const Index = () => {
         </div>
 
         <div className="container mx-auto relative z-10 text-center">
-          <Badge className="mb-6 px-6 py-2 text-sm font-mono animate-glow-pulse bg-primary/20 border-primary/50 text-white hover:text-black">
+          <Badge className="mb-6 px-6 py-2 text-sm font-mono animate-glow-pulse bg-primary/20 border-primary/50 text-black dark:text-white hover:text-white dark:hover:text-black">
             <User className="w-4 h-4 mr-2" />
             PROFESSIONAL VIRTUAL ASSISTANT
           </Badge>
@@ -214,7 +237,7 @@ const Index = () => {
                   "linear-gradient(135deg, hsl(190 100% 50%), hsl(258 90% 66%))",
                 color: "white",
               }}
-              onClick={() => scrollToSection("about")}
+              onClick={() => scrollToSection("service-packages")}
             >
               View Service
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -280,7 +303,7 @@ const Index = () => {
       >
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <Badge className="mb-4 px-4 py-2 bg-primary/20 border-primary/50 text-white hover:text-black">
+            <Badge className="mb-4 px-4 py-2 bg-primary/20 border-primary/50 text-black dark:text-white hover:text-white dark:hover:text-black">
               <User className="w-4 h-4 mr-2" />
               ABOUT ME
             </Badge>
@@ -356,7 +379,7 @@ const Index = () => {
       >
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <Badge className="mb-4 px-4 py-2 bg-accent/20 border-accent/50 text-white hover:text-black">
+            <Badge className="mb-4 px-4 py-2 bg-accent/20 border-accent/50 text-black dark:text-white hover:text-white dark:hover:text-black">
               <FolderOpen className="w-4 h-4 mr-2" />
               VA TOOLKIT
             </Badge>
@@ -493,7 +516,7 @@ const Index = () => {
       >
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <Badge className="mb-4 px-4 py-2 bg-accent/20 border-accent/50 text-white hover:text-black">
+            <Badge className="mb-4 px-4 py-2 bg-accent/20 border-accent/50 text-black dark:text-white hover:text-white dark:hover:text-black">
               <Globe className="w-4 h-4 mr-2" />
               INTEGRATIONS
             </Badge>
@@ -596,7 +619,7 @@ const Index = () => {
       >
         <div className="container mx-auto">
           <div className="text-center mb-12">
-            <Badge className="mb-4 px-4 py-2 bg-secondary/20 border-secondary/50 text-white hover:text-black">
+            <Badge className="mb-4 px-4 py-2 bg-secondary/20 border-secondary/50 text-black dark:text-white hover:text-white dark:hover:text-black">
               <Cpu className="w-4 h-4 mr-2" />
               SERVICE PACKAGES
             </Badge>

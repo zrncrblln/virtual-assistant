@@ -1,3 +1,6 @@
-# TODO List for Adding Photoshop to Creative Tools
+# TODO: Update Index.tsx Image Handling
 
-- [ ] Update the tools array in the Creative Tools category in src/pages/Index.tsx to include "Photoshop"
+- [ ] Remove 5 image import statements from Index.tsx (heroImage, predictiveAnalytics, automatedWorkflows, realtimeData, nlpChat)
+- [ ] Change hero image src from {heroImage} to "/hero-ai-interface.jpg"
+- [ ] Run the app to verify images load correctly
+- [ ] Remove empty src/assets/ folder if applicable
